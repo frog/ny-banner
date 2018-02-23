@@ -1,0 +1,19 @@
+{
+  "name": "ny-banner",
+  "version": "1.0.0",
+  "description": "LED Banner at NY Studio",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frog/ny-banner.git"
+  },
+  "author": "XY Feng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frog/ny-banner/issues"
+  },
+  "homepage": "https://github.com/frog/ny-banner#readme"
+}
