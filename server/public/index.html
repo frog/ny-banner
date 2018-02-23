@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI</title>
+  <style>
+    body {
+      margin: 0px;
+      background: #fff;
+    }
+
+    .container {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px;
+      margin: 0 auto;
+    }
+
+    button {
+      text-transform: uppercase;
+      height: 80px;
+      border: 10px solid #000;
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin: 20px 0;
+      background: #fff;
+      color: #000;
+      font-size: 24px;
+      font-family: Arial;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button type="button" name="stop">stop</button>
+    <button type="button" name="update">update</button>
+    <button type="button" name="start">start</button>
+    <button type="button" name="reboot">reboot</button>
+  </div>
+  <script src="./jquery-3.0.0.min.js"></script>
+  <script src="./socket.io-1.4.5.js"></script>
+  <script type="text/javascript">
+    var socket = io();
+    $('button').on('click', function() {
+      var name = $(this).attr("name");
+      socket.emit(name);
+      return true;
+    });
+  </script>
+</body>
+
+</html>

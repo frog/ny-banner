@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/frog/ny-banner/issues"
   },
-  "homepage": "https://github.com/frog/ny-banner#readme"
+  "homepage": "https://github.com/frog/ny-banner#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "node-cmd": "^1.1.1",
+    "socket.io": "^1.5.1",
+    "socket.io-client": "^1.7.3"
+  }
 }
