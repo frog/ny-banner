@@ -21,16 +21,7 @@ io.on('connection', function (socket) {
   // start animation
   socket.on('stop', function () {
     console.log('stop application');
-    // mac platform
-    if (platform === 'darwin') {
-      cmd.run("kill $(ps aux | grep '[n]ode index.js' | awk '{print $2}') && kill $(ps aux | grep '[C]hrome' | awk '{print $2}')");
-    } // windows platform
-    else if (platform.indexOf('win') === 0) {
-      // get pid
-      'FOR /F "usebackq tokens=5 skip=1 " %i IN (`netstat -ao ^| find "LISTENING" ^| find "3000"`) DO taskkill /PID %~i /F && taskkill /F /IM chrome.exe'
-      // cmd.run('FOR /F "usebackq tokens=5 skip=1 " %i IN (`netstat -ao ^| find "LISTENING" ^| find "3000"`) DO taskkill /PIDo %~i /F && taskkill /F /IM firefox.exe');
-      // cmd.run('FOR /F "usebackq tokens=5 skip=1 " %i IN (`netstat -ao ^| find "LISTENING" ^| find "3000"`) DO taskkill /PID %~i /F && taskkill /F /IM firefox.exe');
-    }
+    cmd.run('FOR /F "usebackq tokens=5 skip=1 " %i IN (`netstat -ao ^| find "LISTENING" ^| find "3000"`) DO taskkill /PID %~i /F && taskkill /F /IM chrome.exe');
   });
   socket.on('update', function () {
     console.log('update application');

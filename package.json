@@ -4,7 +4,8 @@
   "description": "LED Banner at NY Studio",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "run": "node server/index.js"
   },
   "repository": {
     "type": "git",

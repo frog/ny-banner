@@ -21,8 +21,7 @@ if (platform.indexOf('win') === 0) {
 }
 
 function isDirectory(source) {
-  console.log(source);
-  if (fs.lstatSync(source).isDirectory() && source !== 'public/assets') {
+  if (fs.lstatSync(source).isDirectory()) {
     return true;
   } else {
     return false;
@@ -39,7 +38,9 @@ function getDirectories(source) {
       return dirName.split('/')[1];
     }
   });
-  // console.log(paths);
+  var assetsIndex = paths.indexOf('assets');
+  paths.splice(assetsIndex, 1);
+  console.log(paths);
   return paths
 }
 
@@ -90,8 +91,7 @@ function launchApplication() {
     command = 'open -a "Google Chrome" http://localhost:3000';
   } // windows platform
   else if (platform.indexOf('win') === 0) {
-    command = 'cd ../../Program Files (x86)/Google/Chrome/Application/ && chrome.exe -fullscreen -kiosk -incognito http://localhost:3000';
-    // command = 'cd ../../Program Files (x86)/Mozilla Firefox/ && firefox.exe -url "http://localhost:3000"';
+    command = 'cd C:/Program Files (x86)/Google/Chrome/Application/ && chrome.exe -fullscreen -kiosk -incognito http://localhost:3000';
   }
 
   child_process.exec(command, function(err) {

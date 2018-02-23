@@ -1,2 +1,2 @@
 echo "Start Server"
-node server/index.js
+npm run-script run
