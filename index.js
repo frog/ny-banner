@@ -74,7 +74,7 @@ function loopFrom(index) {
     var nextMode = (mode + 1) % MODE_QUEUE.length;
     switchToMode(nextMode);
     loopFrom(nextMode);
-  }, MODE_INTERVALS[index] * 1000);
+  }, MODE_TIMEOUT * 1000);
 }
 
 function switchToMode(m) {
