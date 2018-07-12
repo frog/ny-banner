@@ -11,7 +11,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(60);
   var now = moment();
   var millis = deadline.diff(now, 'milliseconds');
   var countdown = "DUEEEEEEEEE";
@@ -23,6 +23,6 @@ function draw() {
   }
   fill('#FFF');
   textFont(myFont);
-  textSize(11);
+  textSize(12);
   text(countdown, 4, 11);
 }
