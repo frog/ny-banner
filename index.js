@@ -70,11 +70,11 @@ http.listen(3000, function() {
 function loopFrom(index) {
   mode = index;
   clearTimeout(modeLoopingTimeout);
-  modeLoopingTimeout = setTimeout(function() {
-    var nextMode = (mode + 1) % MODE_QUEUE.length;
-    switchToMode(nextMode);
-    loopFrom(nextMode);
-  }, MODE_TIMEOUT * 1000);
+  // modeLoopingTimeout = setTimeout(function() {
+  //   var nextMode = (mode + 1) % MODE_QUEUE.length;
+  //   switchToMode(nextMode);
+  //   loopFrom(nextMode);
+  // }, MODE_TIMEOUT * 1000);
 }
 
 function switchToMode(m) {
