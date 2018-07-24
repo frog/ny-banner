@@ -58,8 +58,7 @@ var mode = 0;
 
 app.use(express.static('public'));
 app.get('/', function(req, res) {
-  res.redirect(MODE_QUEUE[0]);
-  loopFrom(mode);
+  res.redirect('gif/index.html');
 });
 
 http.listen(3000, function() {
